@@ -5,7 +5,7 @@
 
 	const navItems = [
 		{ href: '/', label: 'Accueil' },
-		{ href: '/films', label: 'Films' },
+		{ href: '/movies', label: 'Films' },
 		{ href: '/series', label: 'Séries' },
 		{ href: '/search', label: 'Recherche' },
 		{ href: '/favoris', label: 'Favoris' }
@@ -17,15 +17,21 @@
 		class="pointer-events-none fixed -top-40 left-1/2 h-150 w-150 -translate-x-1/2 rounded-full bg-emerald-800/10 blur-3xl"
 	></div>
 
-	<header
-		class="sticky top-0 z-40 border-b border-zinc-900/80 bg-zinc-950/70 backdrop-blur-xl"
-	>
+	<header class="sticky top-0 z-40 border-b border-zinc-900/80 bg-zinc-950/70 backdrop-blur-xl">
 		<div class="mx-auto flex h-16 max-w-6xl items-center gap-6 px-6">
 			<a href="/" class="flex items-center gap-2 text-lg font-bold tracking-tight">
 				<span
 					class="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-emerald-500 to-emerald-700"
 				>
-					<svg class="h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+					<svg
+						class="h-4 w-4 text-white"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
 						<rect x="3" y="5" width="18" height="14" rx="2" />
 						<path d="M7 5v14M17 5v14M3 9h18" />
 					</svg>
@@ -53,7 +59,15 @@
 					class="rounded-lg p-2 text-zinc-400 transition hover:bg-zinc-900 hover:text-zinc-100"
 					aria-label="Profil"
 				>
-					<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<svg
+						class="h-5 w-5"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
 						<circle cx="12" cy="8" r="4" />
 						<path d="M4 21a8 8 0 0 1 16 0" />
 					</svg>
