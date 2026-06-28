@@ -94,7 +94,12 @@
 				<span class="inline-flex items-center justify-center gap-2">
 					<svg class="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none">
 						<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" opacity="0.25" />
-						<path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+						<path
+							d="M12 2a10 10 0 0 1 10 10"
+							stroke="currentColor"
+							stroke-width="3"
+							stroke-linecap="round"
+						/>
 					</svg>
 					Connexion…
 				</span>
@@ -113,5 +118,5 @@
 </div>
 
 <p class="mt-6 text-center text-xs text-zinc-600">
-	© {new Date().getFullYear()} Cinémag · projet B3
+	© {new Date().getFullYear()} Cinémag
 </p>

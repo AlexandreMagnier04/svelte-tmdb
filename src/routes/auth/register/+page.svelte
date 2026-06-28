@@ -69,7 +69,7 @@
 				value={form?.username ?? ''}
 				required
 				autocomplete="username"
-				class="rounded-lg border border-zinc-800 bg-zinc-950/60 px-4 py-2.5 text-zinc-100 placeholder-zinc-600 outline-none transition focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20"
+				class="rounded-lg border border-zinc-800 bg-zinc-950/60 px-4 py-2.5 text-zinc-100 placeholder-zinc-600 transition outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20"
 			/>
 		</div>
 
@@ -83,7 +83,7 @@
 				value={form?.email ?? ''}
 				required
 				autocomplete="email"
-				class="rounded-lg border border-zinc-800 bg-zinc-950/60 px-4 py-2.5 text-zinc-100 placeholder-zinc-600 outline-none transition focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20"
+				class="rounded-lg border border-zinc-800 bg-zinc-950/60 px-4 py-2.5 text-zinc-100 placeholder-zinc-600 transition outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20"
 			/>
 		</div>
 
@@ -97,7 +97,7 @@
 				required
 				minlength="6"
 				autocomplete="new-password"
-				class="rounded-lg border border-zinc-800 bg-zinc-950/60 px-4 py-2.5 text-zinc-100 placeholder-zinc-600 outline-none transition focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20"
+				class="rounded-lg border border-zinc-800 bg-zinc-950/60 px-4 py-2.5 text-zinc-100 placeholder-zinc-600 transition outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20"
 			/>
 		</div>
 
@@ -110,7 +110,12 @@
 				<span class="inline-flex items-center justify-center gap-2">
 					<svg class="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none">
 						<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" opacity="0.25" />
-						<path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+						<path
+							d="M12 2a10 10 0 0 1 10 10"
+							stroke="currentColor"
+							stroke-width="3"
+							stroke-linecap="round"
+						/>
 					</svg>
 					Création…
 				</span>
@@ -129,5 +134,5 @@
 </div>
 
 <p class="mt-6 text-center text-xs text-zinc-600">
-	© {new Date().getFullYear()} Cinémag · projet B3
+	© {new Date().getFullYear()} Cinémag
 </p>
