@@ -26,9 +26,7 @@
 
 		<form method="POST" action="?/update" use:enhance class="flex flex-col gap-4">
 			<div class="flex flex-col gap-1">
-				<label for="username" class="text-sm font-medium text-zinc-300">
-					Nom d'utilisateur
-				</label>
+				<label for="username" class="text-sm font-medium text-zinc-300"> Nom d'utilisateur </label>
 				<input
 					id="username"
 					name="username"

@@ -1,7 +1,6 @@
 //Types TMDB partagés par toute l'app.
 
-
-// Films 
+// Films
 
 export interface Movie {
 	id: number;
@@ -17,7 +16,7 @@ export interface Movie {
 	genre_ids: number[];
 }
 
-// Séries 
+// Séries
 
 export interface TvShow {
 	id: number;
@@ -97,7 +96,7 @@ export interface MovieDetail extends Movie {
 	genres: Genre[];
 }
 
-// Détail série 
+// Détail série
 export interface TvShowDetail extends TvShow {
 	tagline: string;
 	status: string;

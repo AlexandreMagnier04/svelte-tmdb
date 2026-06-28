@@ -15,10 +15,10 @@
 	--font-display: 'Stereonic', ui-sans-serif, system-ui, sans-serif;
 
 	/* Palette RC Lens — rouge + jaune */
-	--color-emerald-300: oklch(0.90 0.17 90);
+	--color-emerald-300: oklch(0.9 0.17 90);
 	--color-emerald-400: oklch(0.82 0.18 85);
 	--color-emerald-500: oklch(0.45 0.21 25);
-	--color-emerald-600: oklch(0.40 0.19 25);
+	--color-emerald-600: oklch(0.4 0.19 25);
 	--color-emerald-700: oklch(0.35 0.17 25);
 	--color-emerald-800: oklch(0.25 0.12 25);
 	--color-emerald-900: oklch(0.18 0.08 25);

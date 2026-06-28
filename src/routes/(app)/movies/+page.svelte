@@ -3,7 +3,9 @@
 	import type { PageData } from './$types';
 	import type { Movie } from '$lib/models/tmdb';
 
-	interface Props { data: PageData; }
+	interface Props {
+		data: PageData;
+	}
 	let { data }: Props = $props();
 
 	type SortKey = 'popularity' | 'rating' | 'date';

@@ -26,12 +26,9 @@ export const actions: Actions = {
 		const form = await request.formData();
 		const username = String(form.get('username')).trim();
 
-		if (!username) return fail(400, { error: 'Le nom d\'utilisateur est requis.' });
+		if (!username) return fail(400, { error: "Le nom d'utilisateur est requis." });
 
-		const { error } = await locals.supabase
-			.from('profiles')
-			.update({ username })
-			.eq('id', user.id);
+		const { error } = await locals.supabase.from('profiles').update({ username }).eq('id', user.id);
 
 		if (error) return fail(500, { error: 'Erreur lors de la mise à jour.' });
 

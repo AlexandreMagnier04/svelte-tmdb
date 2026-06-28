@@ -21,9 +21,7 @@
 {#if backdrop}
 	<div class="pointer-events-none fixed inset-0 -z-10 opacity-20">
 		<img src={backdrop} alt="" class="h-full w-full object-cover" />
-		<div
-			class="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/80 to-transparent"
-		></div>
+		<div class="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/80 to-transparent"></div>
 	</div>
 {/if}
 
@@ -41,14 +39,12 @@
 			<p class="text-sm text-zinc-500">{year}</p>
 			<h1 class="text-3xl font-bold text-zinc-50 sm:text-4xl">{show.name}</h1>
 			{#if show.tagline}
-				<p class="mt-1 italic text-zinc-400">"{show.tagline}"</p>
+				<p class="mt-1 text-zinc-400 italic">"{show.tagline}"</p>
 			{/if}
 		</div>
 
 		<div class="flex flex-wrap gap-2">
-			<span
-				class="rounded-full bg-emerald-900/60 px-3 py-1 text-sm font-semibold text-emerald-300"
-			>
+			<span class="rounded-full bg-emerald-900/60 px-3 py-1 text-sm font-semibold text-emerald-300">
 				★ {rating}
 			</span>
 			<span class="rounded-full bg-zinc-900 px-3 py-1 text-sm text-zinc-400">

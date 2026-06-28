@@ -1,10 +1,5 @@
-
 import type { PageServerLoad } from './$types';
-import {
-	discoverTvShowsByGenre,
-	getOnTheAirTvShows,
-	getTopRatedTvShows
-} from '$lib/services/tmdb';
+import { discoverTvShowsByGenre, getOnTheAirTvShows, getTopRatedTvShows } from '$lib/services/tmdb';
 import { TV_GENRES, type TvCategory } from '$lib/models/tmdb';
 
 export const load: PageServerLoad = async ({ fetch }) => {

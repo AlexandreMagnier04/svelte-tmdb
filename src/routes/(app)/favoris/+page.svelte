@@ -10,7 +10,11 @@
 <section class="mb-10">
 	<p class="mb-2 text-sm font-medium tracking-widest text-emerald-400 uppercase">Ma liste</p>
 	<h1 class="text-4xl font-bold tracking-tight text-zinc-50 sm:text-5xl">Mes favoris</h1>
-	<p class="mt-3 text-zinc-400">{favorites.count} titre{favorites.count > 1 ? 's' : ''} sauvegardé{favorites.count > 1 ? 's' : ''}</p>
+	<p class="mt-3 text-zinc-400">
+		{favorites.count} titre{favorites.count > 1 ? 's' : ''} sauvegardé{favorites.count > 1
+			? 's'
+			: ''}
+	</p>
 </section>
 
 {#if favorites.items.length === 0}
@@ -30,7 +34,9 @@
 							class="w-full rounded-xl object-cover shadow-lg transition group-hover:opacity-80"
 						/>
 					{:else}
-						<div class="flex aspect-[2/3] w-full items-center justify-center rounded-xl bg-zinc-900 text-zinc-600">
+						<div
+							class="flex aspect-[2/3] w-full items-center justify-center rounded-xl bg-zinc-900 text-zinc-600"
+						>
 							Pas d'image
 						</div>
 					{/if}

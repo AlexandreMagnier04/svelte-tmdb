@@ -22,6 +22,4 @@ export interface SignInInput {
 	password: string;
 }
 
-export type AuthResult<T = void> =
-	| { ok: true; data: T }
-	| { ok: false; error: AuthError };
+export type AuthResult<T = void> = { ok: true; data: T } | { ok: false; error: AuthError };

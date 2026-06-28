@@ -43,10 +43,7 @@ export async function signUp(
 	}
 }
 
-export async function signIn(
-	supabase: SupabaseClient,
-	input: SignInInput
-): Promise<AuthResult> {
+export async function signIn(supabase: SupabaseClient, input: SignInInput): Promise<AuthResult> {
 	const { email, password } = input;
 
 	if (!email || !password) {

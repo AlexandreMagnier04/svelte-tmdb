@@ -22,7 +22,7 @@
 			<a href="/" class="flex items-center gap-2 text-lg font-bold tracking-tight">
 				<span
 					class="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-emerald-500 to-emerald-700 text-sm font-black text-white"
-				>M</span
+					>M</span
 				>
 				<span style="font-family: 'Stereonic'">Cinémag</span>
 			</a>
