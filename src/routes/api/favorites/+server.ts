@@ -2,7 +2,9 @@ import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async ({ locals }) => {
-	const { data: { user } } = await locals.supabase.auth.getUser();
+	const {
+		data: { user }
+	} = await locals.supabase.auth.getUser();
 	if (!user) return json([], { status: 401 });
 
 	const { data } = await locals.supabase
@@ -14,24 +16,31 @@ export const GET: RequestHandler = async ({ locals }) => {
 };
 
 export const POST: RequestHandler = async ({ request, locals }) => {
-	const { data: { user } } = await locals.supabase.auth.getUser();
+	const {
+		data: { user }
+	} = await locals.supabase.auth.getUser();
 	if (!user) return json({ error: 'Non autorisé' }, { status: 401 });
 
 	const { id, kind, title, poster_path } = await request.json();
 
-	await locals.supabase.from('favorites').upsert({
-		user_id: user.id,
-		media_id: id,
-		media_type: kind,
-		title,
-		poster_path
-	}, { onConflict: 'user_id,media_id,media_type' });
+	await locals.supabase.from('favorites').upsert(
+		{
+			user_id: user.id,
+			media_id: id,
+			media_type: kind,
+			title,
+			poster_path
+		},
+		{ onConflict: 'user_id,media_id,media_type' }
+	);
 
 	return json({ ok: true });
 };
 
 export const DELETE: RequestHandler = async ({ request, locals }) => {
-	const { data: { user } } = await locals.supabase.auth.getUser();
+	const {
+		data: { user }
+	} = await locals.supabase.auth.getUser();
 	if (!user) return json({ error: 'Non autorisé' }, { status: 401 });
 
 	const { id, kind } = await request.json();

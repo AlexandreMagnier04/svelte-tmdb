@@ -6,7 +6,9 @@ export const load: LayoutServerLoad = async ({ locals: { supabase } }) => {
 	const { data, error } = await supabase.auth.getClaims();
 	if (error || !data?.claims) redirect(303, '/auth/login');
 
-	const { data: { user } } = await supabase.auth.getUser();
+	const {
+		data: { user }
+	} = await supabase.auth.getUser();
 
 	let favorites: FavoriteItem[] = [];
 	if (user) {

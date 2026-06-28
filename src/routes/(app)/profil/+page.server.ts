@@ -18,7 +18,9 @@ export const load: PageServerLoad = async ({ locals }) => {
 
 export const actions: Actions = {
 	update: async ({ request, locals }) => {
-		const { data: { user } } = await locals.supabase.auth.getUser();
+		const {
+			data: { user }
+		} = await locals.supabase.auth.getUser();
 		if (!user) redirect(303, '/auth/login');
 
 		const form = await request.formData();
@@ -34,7 +36,9 @@ export const actions: Actions = {
 	},
 
 	password: async ({ request, locals }) => {
-		const { data: { user } } = await locals.supabase.auth.getUser();
+		const {
+			data: { user }
+		} = await locals.supabase.auth.getUser();
 		if (!user) redirect(303, '/auth/login');
 
 		const form = await request.formData();
@@ -42,7 +46,8 @@ export const actions: Actions = {
 		const confirm = String(form.get('confirm')).trim();
 
 		if (password.length < 6) return fail(400, { passwordError: 'Minimum 6 caractères.' });
-		if (password !== confirm) return fail(400, { passwordError: 'Les mots de passe ne correspondent pas.' });
+		if (password !== confirm)
+			return fail(400, { passwordError: 'Les mots de passe ne correspondent pas.' });
 
 		const { error } = await locals.supabase.auth.updateUser({ password });
 

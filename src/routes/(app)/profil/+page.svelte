@@ -23,7 +23,7 @@
 <div class="flex max-w-md flex-col gap-6">
 	<!-- Username -->
 	<div class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6">
-		<h2 class="mb-4 text-sm font-semibold text-zinc-300 uppercase tracking-widest">Informations</h2>
+		<h2 class="mb-4 text-sm font-semibold tracking-widest text-zinc-300 uppercase">Informations</h2>
 		<p class="mb-6 text-sm text-zinc-500">{data.email}</p>
 
 		<form method="POST" action="?/update" use:enhance class="flex flex-col gap-4">
@@ -56,7 +56,7 @@
 
 	<!-- Password -->
 	<div class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6">
-		<h2 class="mb-4 text-sm font-semibold text-zinc-300 uppercase tracking-widest">Mot de passe</h2>
+		<h2 class="mb-4 text-sm font-semibold tracking-widest text-zinc-300 uppercase">Mot de passe</h2>
 
 		<form method="POST" action="?/password" use:enhance class="flex flex-col gap-4">
 			<div class="flex flex-col gap-1">
