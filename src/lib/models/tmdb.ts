@@ -1,3 +1,8 @@
+//Types TMDB partagés par toute l'app.
+
+
+// Films 
+
 export interface Movie {
 	id: number;
 	title: string;
@@ -5,12 +10,30 @@ export interface Movie {
 	overview: string;
 	poster_path: string | null;
 	backdrop_path: string | null;
-	release_date: string;
+	release_date: string; // format "YYYY-MM-DD"
+	vote_average: number; // 0–10
+	vote_count: number;
+	popularity: number;
+	genre_ids: number[];
+}
+
+// Séries 
+
+export interface TvShow {
+	id: number;
+	name: string;
+	original_name: string;
+	overview: string;
+	poster_path: string | null;
+	backdrop_path: string | null;
+	first_air_date: string;
 	vote_average: number;
 	vote_count: number;
 	popularity: number;
 	genre_ids: number[];
 }
+
+// Résultats paginés
 
 export interface TmdbPaginated<T> {
 	page: number;
@@ -24,6 +47,9 @@ export interface Genre {
 	name: string;
 }
 
+// Constantes de genres
+
+//--Films--
 export const MOVIE_GENRES = {
 	ACTION: 28,
 	COMEDY: 35,
@@ -35,8 +61,28 @@ export const MOVIE_GENRES = {
 	ANIMATION: 16
 } as const;
 
+//--Séries--
+export const TV_GENRES = {
+	ACTION_ADVENTURE: 10759,
+	COMEDY: 35,
+	DRAMA: 18,
+	SCI_FI_FANTASY: 10765,
+	CRIME: 80,
+	MYSTERY: 9648,
+	ANIMATION: 16,
+	DOCUMENTARY: 99
+} as const;
+
+// Catégories de films (/movies).
 export interface MovieCategory {
 	key: string;
 	label: string;
 	movies: Movie[];
+}
+
+// Catégories de séries (/series).
+export interface TvCategory {
+	key: string;
+	label: string;
+	shows: TvShow[];
 }

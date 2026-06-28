@@ -1,3 +1,4 @@
+
 import type { PageServerLoad } from './$types';
 import {
 	discoverMoviesByGenre,

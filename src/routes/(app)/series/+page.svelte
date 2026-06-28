@@ -1,5 +1,4 @@
 <script lang="ts">
-	// Page /movies — hero + un carrousel par catégorie chargée côté serveur.
 	import MediaCarousel from '$lib/components/MediaCarousel.svelte';
 	import type { PageData } from './$types';
 
@@ -10,22 +9,21 @@
 </script>
 
 <svelte:head>
-	<title>Films · Cinémag</title>
+	<title>Séries · Cinémag</title>
 </svelte:head>
 
 <section class="mb-10">
-	<p class="mb-2 text-sm font-medium tracking-widest text-emerald-400 uppercase">Films</p>
+	<p class="mb-2 text-sm font-medium tracking-widest text-emerald-400 uppercase">Séries</p>
 	<h1 class="text-4xl font-bold tracking-tight text-zinc-50 sm:text-5xl">
-		Explore le <span class="text-emerald-400">cinéma</span>
+		Plonge dans les <span class="text-emerald-400">séries</span>
 	</h1>
 	<p class="mt-3 max-w-2xl text-zinc-400">
-		Les sorties du moment, les classiques incontournables et les meilleurs films par genre.
+		Les séries du moment, les incontournables et les meilleures par genre.
 	</p>
 </section>
 
 <div class="space-y-10">
-	<!-- On boucle sur les catégories de films -->
 	{#each data.categories as category (category.key)}
-		<MediaCarousel title={category.label} kind="movie" items={category.movies} />
+		<MediaCarousel title={category.label} kind="tv" items={category.shows} />
 	{/each}
 </div>
