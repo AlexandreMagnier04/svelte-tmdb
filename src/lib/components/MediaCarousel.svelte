@@ -1,7 +1,7 @@
 <script lang="ts">
 	// Carrousel horizontal qui affiche une rangée de cartes.
 
-	import type { Movie, TvShow } from '$lib/models/tmdb';
+	import type { Movie, TvShow } from '$lib/server/db/models/tmdb';
 	import MovieCard from './MovieCard.svelte';
 	import TvCard from './TvCard.svelte';
 

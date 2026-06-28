@@ -1,5 +1,5 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
-import type { AuthError, AuthResult, SignInInput, SignUpInput } from '$lib/models/auth';
+import type { AuthError, AuthResult, SignInInput, SignUpInput } from '$lib/server/db/models/auth';
 
 export async function signUp(
 	supabase: SupabaseClient,

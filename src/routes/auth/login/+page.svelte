@@ -29,21 +29,10 @@
 		<div
 			class="flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-emerald-700 shadow-lg shadow-emerald-900/50"
 		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				class="h-6 w-6 text-white"
-				viewBox="0 0 24 24"
-				fill="none"
-				stroke="currentColor"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
+			<span
+				class="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-emerald-500 to-emerald-700 text-sm font-black text-white"
+				>M</span
 			>
-				<rect x="3" y="5" width="18" height="14" rx="2" />
-				<path d="M3 9h18" />
-				<path d="M7 5v14" />
-				<path d="M17 5v14" />
-			</svg>
 		</div>
 		<h1 class="text-2xl font-semibold tracking-tight text-zinc-50">Connexion</h1>
 		<p class="text-sm text-zinc-400">Accède aux sorties de la semaine</p>

@@ -26,12 +26,33 @@ export const actions: Actions = {
 		const form = await request.formData();
 		const username = String(form.get('username')).trim();
 
-		if (!username) return fail(400, { error: "Le nom d'utilisateur est requis." });
+		if (!username) return fail(400, { updateError: "Le nom d'utilisateur est requis." });
 
 		const { error } = await locals.supabase.from('profiles').update({ username }).eq('id', user.id);
 
-		if (error) return fail(500, { error: 'Erreur lors de la mise à jour.' });
+		if (error) return fail(500, { updateError: 'Erreur lors de la mise à jour.' });
 
-		return { success: true };
+		return { updateSuccess: true };
+	},
+
+	password: async ({ request, locals }) => {
+		const {
+			data: { user }
+		} = await locals.supabase.auth.getUser();
+		if (!user) redirect(303, '/auth/login');
+
+		const form = await request.formData();
+		const password = String(form.get('password')).trim();
+		const confirm = String(form.get('confirm')).trim();
+
+		if (password.length < 6) return fail(400, { passwordError: 'Minimum 6 caractères.' });
+		if (password !== confirm)
+			return fail(400, { passwordError: 'Les mots de passe ne correspondent pas.' });
+
+		const { error } = await locals.supabase.auth.updateUser({ password });
+
+		if (error) return fail(500, { passwordError: 'Erreur lors du changement de mot de passe.' });
+
+		return { passwordSuccess: true };
 	}
 };

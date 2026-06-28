@@ -1,5 +1,11 @@
 import { KEY_API_TMDB } from '$env/static/private';
-import type { Movie, MovieDetail, TmdbPaginated, TvShow, TvShowDetail } from '$lib/models/tmdb';
+import type {
+	Movie,
+	MovieDetail,
+	TmdbPaginated,
+	TvShow,
+	TvShowDetail
+} from '$lib/server/db/models/tmdb';
 
 const BASE = 'https://api.themoviedb.org/3';
 

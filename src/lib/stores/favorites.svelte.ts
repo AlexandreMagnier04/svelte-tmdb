@@ -5,48 +5,45 @@ export interface FavoriteItem {
 	poster_path: string | null;
 }
 
-// Store pour gérer les favoris de l'utilisateur
 class FavoritesStore {
 	#items = $state<FavoriteItem[]>([]);
+	#initialized = false;
 
-	// On charge les favoris depuis le localStorage au démarrage
-	constructor() {
-		if (typeof window !== 'undefined') {
-			const saved = localStorage.getItem('cinemag_favorites');
-			if (saved) this.#items = JSON.parse(saved) as FavoriteItem[];
-		}
+	// Appelé depuis +layout.svelte avec les données Supabase
+	init(items: FavoriteItem[]) {
+		if (this.#initialized) return;
+		this.#items = items;
+		this.#initialized = true;
 	}
 
-	// On expose les favoris
 	get items() {
 		return this.#items;
 	}
 
-	// On expose le nombre de favoris
 	get count() {
 		return this.#items.length;
 	}
 
-	// On vérifie si un élément est déjà dans les favoris
 	has(id: number, kind: 'movie' | 'tv') {
 		return this.#items.some((i) => i.id === id && i.kind === kind);
 	}
 
-	// On ajoute ou supprime un élément des favoris
-	toggle(item: FavoriteItem) {
-		if (this.has(item.id, item.kind)) {
+	async toggle(item: FavoriteItem) {
+		const removing = this.has(item.id, item.kind);
+
+		// Mise à jour optimiste immédiate
+		if (removing) {
 			this.#items = this.#items.filter((i) => !(i.id === item.id && i.kind === item.kind));
 		} else {
 			this.#items = [...this.#items, item];
 		}
-		this.#persist();
-	}
 
-	// On sauvegarde les favoris dans le localStorage
-	#persist() {
-		if (typeof window !== 'undefined') {
-			localStorage.setItem('cinemag_favorites', JSON.stringify(this.#items));
-		}
+		// Sync Supabase en arrière-plan
+		await fetch('/api/favorites', {
+			method: removing ? 'DELETE' : 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(item)
+		});
 	}
 }
 

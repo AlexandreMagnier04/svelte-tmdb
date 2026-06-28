@@ -1,6 +1,6 @@
 <script lang="ts">
 	// Carte d'affiche pour un film.
-	import type { Movie } from '$lib/models/tmdb';
+	import type { Movie } from '$lib/server/db/models/tmdb';
 
 	interface Props {
 		movie: Movie;

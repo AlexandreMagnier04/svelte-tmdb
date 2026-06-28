@@ -1,5 +1,5 @@
 import type { PageServerLoad } from './$types';
-import { getMovieById } from '$lib/services/tmdb';
+import { getMovieById } from '$lib/server/services/tmdb';
 import { error } from '@sveltejs/kit';
 
 export const load: PageServerLoad = async ({ params, fetch }) => {

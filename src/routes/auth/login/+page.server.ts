@@ -1,6 +1,6 @@
 import { fail, redirect } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
-import { authErrorMessage, signIn } from '$lib/services/auth';
+import { authErrorMessage, signIn } from '$lib/server/services/auth';
 
 export const load: PageServerLoad = async ({ locals: { supabase } }) => {
 	const { data, error } = await supabase.auth.getClaims();

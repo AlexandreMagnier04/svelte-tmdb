@@ -1,6 +1,10 @@
 import type { PageServerLoad } from './$types';
-import { discoverMoviesByGenre, getNowPlayingMovies, getTopRatedMovies } from '$lib/services/tmdb';
-import { MOVIE_GENRES, type MovieCategory } from '$lib/models/tmdb';
+import {
+	discoverMoviesByGenre,
+	getNowPlayingMovies,
+	getTopRatedMovies
+} from '$lib/server/services/tmdb';
+import { MOVIE_GENRES, type MovieCategory } from '$lib/server/db/models/tmdb';
 
 export const load: PageServerLoad = async ({ fetch }) => {
 	const [nowPlaying, topRated, comedy, action, scifi] = await Promise.all([

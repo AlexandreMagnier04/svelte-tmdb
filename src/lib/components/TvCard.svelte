@@ -1,7 +1,7 @@
 <script lang="ts">
 	// Carte d'affiche pour une série. Jumeau de MovieCard mais lit `name` et
 	// `first_air_date` (les séries n'ont pas `title` ni `release_date` chez TMDB).
-	import type { TvShow } from '$lib/models/tmdb';
+	import type { TvShow } from '$lib/server/db/models/tmdb';
 
 	interface Props {
 		show: TvShow;

@@ -4,7 +4,7 @@ import {
 	getTopRatedMovies,
 	getOnTheAirTvShows,
 	getTopRatedTvShows
-} from '$lib/services/tmdb';
+} from '$lib/server/services/tmdb';
 
 export const load: PageServerLoad = async ({ fetch }) => {
 	const [nowPlaying, topRatedMovies, onTheAir, topRatedShows] = await Promise.all([
