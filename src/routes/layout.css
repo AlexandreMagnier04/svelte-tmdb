@@ -1,16 +1,28 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 @import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@font-face {
+	font-family: 'Stereonic';
+	src: url('$lib/fonts/Mint Type - Stereonic-XS.otf') format('opentype');
+	font-weight: normal;
+	font-display: swap;
+}
 
 @theme {
 	--font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-	--color-brand-50: oklch(0.96 0.05 160);
-	--color-brand-400: oklch(0.75 0.15 160);
-	--color-brand-500: oklch(0.66 0.18 160);
-	--color-brand-600: oklch(0.56 0.18 160);
-	--color-brand-700: oklch(0.46 0.16 160);
-	--color-brand-800: oklch(0.36 0.12 160);
-	--color-brand-900: oklch(0.26 0.08 160);
+	--font-display: 'Stereonic', ui-sans-serif, system-ui, sans-serif;
+
+	/* Palette RC Lens — rouge + jaune */
+	--color-emerald-300: oklch(0.90 0.17 90);
+	--color-emerald-400: oklch(0.82 0.18 85);
+	--color-emerald-500: oklch(0.45 0.21 25);
+	--color-emerald-600: oklch(0.40 0.19 25);
+	--color-emerald-700: oklch(0.35 0.17 25);
+	--color-emerald-800: oklch(0.25 0.12 25);
+	--color-emerald-900: oklch(0.18 0.08 25);
+	--color-emerald-950: oklch(0.12 0.05 25);
 }
 
 html,
@@ -19,6 +31,11 @@ body {
 	background-color: #09090b;
 	color: #f4f4f5;
 	font-family: var(--font-sans);
+}
+
+h1 {
+	font-family: var(--font-display);
+	letter-spacing: 0.01em;
 }
 
 ::selection {

@@ -21,22 +21,10 @@
 		<div class="mx-auto flex h-16 max-w-6xl items-center gap-6 px-6">
 			<a href="/" class="flex items-center gap-2 text-lg font-bold tracking-tight">
 				<span
-					class="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-emerald-500 to-emerald-700"
+					class="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-emerald-500 to-emerald-700 text-sm font-black text-white"
+				>M</span
 				>
-					<svg
-						class="h-4 w-4 text-white"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2.5"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-					>
-						<rect x="3" y="5" width="18" height="14" rx="2" />
-						<path d="M7 5v14M17 5v14M3 9h18" />
-					</svg>
-				</span>
-				<span>Cinémag</span>
+				<span style="font-family: 'Stereonic'">Cinémag</span>
 			</a>
 
 			<nav class="hidden flex-1 items-center gap-1 md:flex">

@@ -86,3 +86,22 @@ export interface TvCategory {
 	label: string;
 	shows: TvShow[];
 }
+
+// Détail film
+export interface MovieDetail extends Movie {
+	tagline: string;
+	runtime: number | null;
+	status: string;
+	budget: number;
+	revenue: number;
+	genres: Genre[];
+}
+
+// Détail série 
+export interface TvShowDetail extends TvShow {
+	tagline: string;
+	status: string;
+	number_of_seasons: number;
+	number_of_episodes: number;
+	genres: Genre[];
+}

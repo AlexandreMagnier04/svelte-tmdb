@@ -1,5 +1,5 @@
 import { KEY_API_TMDB } from '$env/static/private';
-import type { Movie, TmdbPaginated, TvShow } from '$lib/models/tmdb';
+import type { Movie, MovieDetail, TmdbPaginated, TvShow, TvShowDetail } from '$lib/models/tmdb';
 
 const BASE = 'https://api.themoviedb.org/3';
 
@@ -42,7 +42,7 @@ export function discoverMoviesByGenre(genreId: number, fetchFn: FetchLike = fetc
 // --- Séries ---
 
 // Séries diffusées actuellement
-export function getNowPlayingTvShows(fetchFn: FetchLike = fetch) {
+export function getOnTheAirTvShows(fetchFn: FetchLike = fetch) {
 	return tmdb<TmdbPaginated<TvShow>>('/tv/on_the_air', fetchFn);
 }
 
@@ -57,4 +57,14 @@ export function discoverTvShowsByGenre(genreId: number, fetchFn: FetchLike = fet
 		`/discover/tv?with_genres=${genreId}&sort_by=popularity.desc&vote_count.gte=200`,
 		fetchFn
 	);
+}
+
+// Détail d'un film par son ID
+export function getMovieById(id: number, fetchFn: FetchLike = fetch) {
+	return tmdb<MovieDetail>(`/movie/${id}`, fetchFn);
+}
+
+// Détail d'une série par son ID
+export function getTvShowById(id: number, fetchFn: FetchLike = fetch) {
+	return tmdb<TvShowDetail>(`/tv/${id}`, fetchFn);
 }

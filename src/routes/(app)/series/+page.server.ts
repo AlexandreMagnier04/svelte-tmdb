@@ -2,14 +2,14 @@
 import type { PageServerLoad } from './$types';
 import {
 	discoverTvShowsByGenre,
-	getNowPlayingTvShows,
+	getOnTheAirTvShows,
 	getTopRatedTvShows
 } from '$lib/services/tmdb';
 import { TV_GENRES, type TvCategory } from '$lib/models/tmdb';
 
 export const load: PageServerLoad = async ({ fetch }) => {
 	const [nowPlaying, topRated, drama, comedy, scifi] = await Promise.all([
-		getNowPlayingTvShows(fetch),
+		getOnTheAirTvShows(fetch),
 		getTopRatedTvShows(fetch),
 		discoverTvShowsByGenre(TV_GENRES.DRAMA, fetch),
 		discoverTvShowsByGenre(TV_GENRES.COMEDY, fetch),
