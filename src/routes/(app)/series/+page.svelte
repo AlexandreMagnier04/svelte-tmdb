@@ -1,7 +1,7 @@
 <script lang="ts">
 	import MediaCarousel from '$lib/components/MediaCarousel.svelte';
 	import type { PageData } from './$types';
-	import type { TvShow } from '$lib/models/tmdb';
+	import type { TvShow } from '$lib/server/db/models/tmdb';
 
 	interface Props {
 		data: PageData;
