@@ -28,7 +28,7 @@ Application web type Allociné — films & séries en streaming, construite avec
 ## Ce qui n'a pas été implémenté
 
 - **Recherche** (`/search`) — manque de temps, l'endpoint TMDB `/search/multi` est prêt à être intégré
-- **Pagination** — les carrousels affichent la première page TMDB (20 résultats max)
+- **Pagination** — les carrousels affichent la première page TMDB (10 résultats max)
 
 ## Difficultés rencontrées
 
@@ -36,11 +36,11 @@ Application web type Allociné — films & séries en streaming, construite avec
 
 La CI échouait à cause de la règle ESLint `svelte/no-navigation-without-resolve` introduite dans une version récente de `eslint-plugin-svelte`. Cette règle interdit les `<a href>` sans passer par `resolve()`, ce qui est incompatible avec notre usage standard de SvelteKit. Solution : désactivation de la règle dans `eslint.config.js`.
 
-### Supabase — détection email déjà utilisé
+### Supabase : détection email déjà utilisé
 
 Supabase ne retourne pas d'erreur lors d'un `signUp` avec un email existant (protection contre l'énumération d'emails). Pour détecter ce cas, on vérifie `data.user.identities.length === 0` après l'appel — comportement non documenté.
 
-### Universal Reactivity — `.svelte.ts`
+### Universal Reactivity : `.svelte.ts`
 
 Les fichiers `.svelte.ts` permettent d'utiliser les runes Svelte 5 (`$state`, `$derived`) hors des composants. Le store favoris utilise ce pattern avec une classe et des champs privés (`#items = $state([])`), ce qui n'est pas documenté dans les guides officiels SvelteKit.
 
